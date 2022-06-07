@@ -27,6 +27,10 @@ public class Producto {
 
     private Boolean estado; //es el mismo nombre valor de la tabla no se pone @Column
 
+    @ManyToOne //
+    @JoinColumn(name = "id_categoria",insertable = false, updatable = false)//no permitira añadir/borrar una categoria por medio de esta relacion
+    private Categoria categoria;
+
     public Integer getIdProducto() {
         return idProducto;
     }
@@ -75,11 +79,20 @@ public class Producto {
         this.cantidadStock = cantidadStock;
     }
 
-    public Boolean isEstado() {
-        return estado;
-    }
-
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.diogoslz.marketplace.persistence.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="categorias")
@@ -13,8 +14,10 @@ public class Categoria {
     private Integer idCategoria;
 
     private String descripcion;
-
     private boolean estado;
+
+    @OneToMany(mappedBy = "categoria") ///de la clase Producto private Categoria categoria;
+    private List<Producto> productos;
 
     public Integer getIdCategoria() {
         return idCategoria;
@@ -38,5 +41,13 @@ public class Categoria {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 }
