@@ -25,7 +25,7 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
-    private boolean estado; //es el mismo nombre valor de la tabla no se pone @Column
+    private Boolean estado; //es el mismo nombre valor de la tabla no se pone @Column
 
     public Integer getIdProducto() {
         return idProducto;
@@ -75,11 +75,11 @@ public class Producto {
         this.cantidadStock = cantidadStock;
     }
 
-    public boolean isEstado() {
+    public Boolean isEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 }
