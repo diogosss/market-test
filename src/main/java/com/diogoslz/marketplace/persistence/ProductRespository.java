@@ -2,10 +2,12 @@ package com.diogoslz.marketplace.persistence;
 
 import com.diogoslz.marketplace.persistence.crud.ProductoCrudRepository;
 import com.diogoslz.marketplace.persistence.entity.Producto;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository //esta clase se encargfa de interactuar con la base de datos
 public class ProductRespository {
 
     private ProductoCrudRepository productoCrudRepository;
@@ -26,7 +28,20 @@ public class ProductRespository {
         return productoCrudRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
     }
 
-    //de los comentarios
+    //Consulta producto en particular
+    public Optional<Producto> getProducto(int idProducto){
+        return productoCrudRepository.findById(idProducto);
+    }
+
+    //guardar un producto
+    public Producto save(Producto producto){
+        return productoCrudRepository.save(producto);
+    }
+
+    //Eliminar un producto
+    public void delete(int idProducto){
+        productoCrudRepository.deleteById(idProducto);
+    }
 
 
 }

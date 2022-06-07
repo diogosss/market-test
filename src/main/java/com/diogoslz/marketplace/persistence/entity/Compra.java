@@ -29,7 +29,7 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "producto") //de la clase Producto    private Producto producto;
+    @OneToMany(mappedBy = "producto") //de la clase Producto    private Producto producto; ***Error "compra"
     private List<ComprasProducto> productos; //productos de una compra
 
     public Integer getIdCompra() {
