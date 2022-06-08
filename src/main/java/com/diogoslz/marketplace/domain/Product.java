@@ -2,13 +2,15 @@ package com.diogoslz.marketplace.domain;
 
 public class Product {
     private int productId;
-    private String nombre;
+    private String name;
     private int categoryId;
     private double price;
     private int stock;
     private boolean state;
     //no incluye codigo de barras por diseño
-    private Category category;
+    private Category category; //dominio
+
+    /*GETTER AND SETTERS*/
 
     public int getProductId() {
         return productId;
@@ -18,12 +20,12 @@ public class Product {
         this.productId = productId;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String nombre) {
+        this.name = nombre;
     }
 
     public int getCategoryId() {

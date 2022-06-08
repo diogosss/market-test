@@ -13,3 +13,12 @@ public interface ProductRepository {
     Product save(Product product);
     void delete(int productId);
 }
+
+
+/*Repositrio para explicar o indicar a todos los repositirios como comprotarse en terminos de producto*/
+/*
+* No exponer la bse de daots en la API
+* Desacoplar la API a una base ded atos puntual
+* No tener campos innecesarios en el API
+* No mesclar idiomas en el dominio
+* */
