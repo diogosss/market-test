@@ -1,3 +1,4 @@
+/*
 package com.diogoslz.marketplace.persistence;
 
 import com.diogoslz.marketplace.persistence.crud.CompraCrudRepository;
@@ -30,3 +31,4 @@ public class CompraRepository {
         return compraCrudRepository.findByFechaAndIdCLienteAndMedioPagoOrderByFechaAsc(fecha,idCliente,medioPAgo);
     }
 }
+*/
