@@ -1,4 +1,4 @@
-/*
+
 package com.diogoslz.marketplace.persistence.crud;
 
 import com.diogoslz.marketplace.persistence.entity.Compra;
@@ -16,4 +16,4 @@ public interface CompraCrudRepository extends CrudRepository<Compra, Integer> {
     List<Compra> findByFechaAndIdCLienteAndMedioPagoOrderByFechaAsc(LocalDateTime fecha, int idCliente, String medioPago);
 
 }
- */
+
