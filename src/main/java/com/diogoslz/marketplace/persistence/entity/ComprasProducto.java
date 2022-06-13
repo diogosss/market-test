@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class ComprasProducto {
 
     @EmbeddedId
-    private ComprasProductoPK id;
+    private ComprasProductoPK id; //llave key compuesta
 
     private Integer cantidad;
     private Double total;

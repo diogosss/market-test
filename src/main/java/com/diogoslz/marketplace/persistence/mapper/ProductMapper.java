@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {CategoryMapper.class}) //uses porque mappera category con la interfaz category maper
+@Mapper(componentModel = "spring", uses = {CategoryMapper.class}) //uses porque mapea category con la interfaz category maper
 public interface ProductMapper {
     //conversores mappers
 
