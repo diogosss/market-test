@@ -29,7 +29,7 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "producto") //de la clase Producto    private Producto producto; ***Error "compra"
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL}) //de la clase Producto    private Producto producto; ***Error "compra" //guardar en cascada
     private List<ComprasProducto> productos; //productos de una compra
 
     public Integer getIdCompra() {

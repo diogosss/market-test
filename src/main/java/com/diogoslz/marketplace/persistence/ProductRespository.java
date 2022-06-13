@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository //esta clase se encargfa de interactuar con la base de datos
+@Repository //esta clase se encarga de interactuar con la base de datos
 public class ProductRespository implements ProductRepository {
 
     @Autowired  //Inyeccion de dependencia para no crear objetos manualmente viola principio inyeccion dependencia
