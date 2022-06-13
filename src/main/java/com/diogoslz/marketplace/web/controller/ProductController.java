@@ -2,6 +2,10 @@ package com.diogoslz.marketplace.web.controller;
 
 import com.diogoslz.marketplace.domain.Product;
 import com.diogoslz.marketplace.domain.service.ProductService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,15 +21,24 @@ public class ProductController {
     private ProductService productService ;
 
     @GetMapping("/all") //obteniendo info
+    @ApiOperation("Get All Supermarket Products")   //swagger2
+    @ApiResponse(code=200,message = "OK")           //swagger2
     public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProduct(@PathVariable("id") int productId){
-        return productService.getProduct(productId)
-                .map(pdct -> new ResponseEntity<>(pdct, HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    @ApiOperation("Search a product with an ID")        //swagger2
+    @ApiResponses({                                     //swagger2
+        @ApiResponse(code = 200,message = "OK"),
+        @ApiResponse(code = 404, message = "Product NOT FOUND")
+    })
+    public ResponseEntity<Product> getProduct(
+            @ApiParam(value = "The id of the product", required = true, example = "7")
+            @PathVariable("id") int productId){
+                return productService.getProduct(productId)
+                        .map(pdct -> new ResponseEntity<>(pdct, HttpStatus.OK))
+                        .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/category/{categId}")
