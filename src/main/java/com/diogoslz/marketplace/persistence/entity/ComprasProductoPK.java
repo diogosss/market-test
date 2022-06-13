@@ -11,7 +11,7 @@ public class ComprasProductoPK implements Serializable {
     private Integer idCompra;
 
     @Column(name = "id_producto")
-    private Integer idPrducto;
+    private Integer idProducto;
 
     public Integer getIdCompra() {
         return idCompra;
@@ -21,12 +21,12 @@ public class ComprasProductoPK implements Serializable {
         this.idCompra = idCompra;
     }
 
-    public Integer getIdPrducto() {
-        return idPrducto;
+    public Integer getIdProducto() {
+        return idProducto;
     }
 
-    public void setIdPrducto(Integer idPrducto) {
-        this.idPrducto = idPrducto;
+    public void setIdProducto(Integer idPrducto) {
+        this.idProducto = idPrducto;
     }
 
 }
