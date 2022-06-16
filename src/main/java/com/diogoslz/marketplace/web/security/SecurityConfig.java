@@ -22,23 +22,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtFilterRequest jwtFilterRequest;
 
+    //para acpetar el user y password del servicio UserdetailService pckg service
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //super.configure(auth);
         auth.userDetailsService(userDetailsService);
     }
 
-
+    //
    @Override
     protected void configure(HttpSecurity http) throws Exception {
         //super.configure(http);
+       //todas las peticiones que terminen en /authenticat sean permitidas
         http.csrf().disable().authorizeRequests().antMatchers("/**/authenticate").permitAll()
-               .anyRequest().authenticated().and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .anyRequest().authenticated().and()                                 //auntenticar otras peticiones
+                .sessionManagement()                                                //
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);            //
         http.addFilterBefore(jwtFilterRequest, UsernamePasswordAuthenticationFilter.class);
     }
 
+    //gestor de autenticacion de la aplicacion
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {

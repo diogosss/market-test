@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service //para poder inyectar
-public class UserDetailService implements UserDetailsService {
+public class UserDetailServiceDemo implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User("diogol","{noop}solochos",new ArrayList<>());
+        return new User("diogol","{noop}solochos",new ArrayList<>()); //array list va los tipos de roles del usuario
+        //{noop} porque no ha pasado por un cifrado
     }
 
     /*

@@ -1,5 +1,5 @@
 package com.diogoslz.marketplace.domain.dto;
-
+//envia informacion para enviar a un controlador
 public class AuthenticationResponse {
 
     private String jwt;

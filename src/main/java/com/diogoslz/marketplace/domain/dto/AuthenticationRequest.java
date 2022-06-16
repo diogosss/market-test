@@ -1,5 +1,5 @@
 package com.diogoslz.marketplace.domain.dto;
-
+//recibe informacion para enviar a un controlador
 public class AuthenticationRequest {
 
     private String username;
